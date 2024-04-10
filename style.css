@@ -1,0 +1,612 @@
+/*body*/
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: "Reem Kufi Fun", sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+body{
+    animation: open 2.5s ease;
+}
+
+@keyframes open {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f4ede8;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 25px 25px;
+    border: solid 1px rgb(14, 14, 14);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0c0704;
+}
+
+/*nav bar*/
+.container{
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: 330px;
+    width: 100%;
+    z-index: 999;
+    position: fixed;
+    overflow: hidden;
+    justify-content: space-around;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: #150d08de;
+    box-shadow: inset 0px 8px 26px black;
+    border-bottom: solid 1px black;
+}
+
+.container svg {
+    height: 15px;
+    width: 15px;
+}
+
+.container .img{
+    height: 20px;
+    width: 20px;
+    filter: drop-shadow(1px 1px 15px black);
+}
+
+.logo{
+    font-size: x-large;
+    font-weight: 999;
+    color: #f3ece7;
+    text-shadow: 1px 1px 15px black;
+}
+
+.nav-items a{
+    margin: 10px;
+    text-decoration: none;
+    text-shadow: 1px 1px 15px black;
+    color: #f4ede8;
+    font-size: medium;
+    padding-left: 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.7s ease;
+}
+
+.nav-items a:hover{
+    color: #824720;
+}
+
+.nav-items a::after,
+.nav-items a::before{
+    content: '.';
+}
+
+.home{
+    margin-right: 100px;
+}
+    
+/*burger menu*/
+
+.hamburger{
+    position: relative;
+    display: block;
+    justify-content: center;
+    width: 35px;
+    height: 45px;
+    cursor: pointer;
+    background: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+    
+.hamburger .bar, .hamburger:after, .hamburger:before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: #f4ede8;
+    border-radius: 10px 10px;
+    margin: 6px 0px;
+    transition: 0.4s;
+}
+    
+.hamburger.is-active:before{
+    transform: rotate(-45deg) translate(-8px, 6px);
+}
+        
+.hamburger.is-active:after{
+    transform: rotate(45deg) translate(-9px, -8px);
+}
+    
+.hamburger.is-active .bar{
+    opacity: 0;
+}
+    
+.mobile-nav{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    min-height : 100vh;
+    z-index: 99;
+    filter: drop-shadow(1px 1px 25px black);
+    backdrop-filter: blur(10px);
+    box-shadow: inset 0px 8px 36px black;
+    border-radius: 20px 20px;
+    padding: 120px;
+    transition: 0.4s;
+}
+    
+.mobile-nav.is-active{
+    left: 0;
+}
+    
+.mobile-nav a{
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto 16px;
+    text-align: center;
+    padding: 12px 16px;
+    background-color: #0c0704;
+    border-radius: 20px 20px;
+    color: #fff8f0;
+    text-decoration: none;
+    transition-duration: 1s;
+}
+    
+.mobile-nav a:hover{
+    color: #824720;
+}
+    
+.mobile-nav svg{
+    width: 25px;
+    height: 25px;
+}
+
+/*background*/
+.background{
+    background-size:cover;
+    background-position:center;
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(img/karsten-winegeart-l24eJZ9cIQk-unsplash.jpg);
+}
+
+.font-effect{
+    font-size: 120px;
+    font-weight: 999;
+    padding-top: 30vh;
+    color: #f4ede8;
+    text-shadow: 1px 1px 25px black;
+    text-transform: uppercase;
+    font-style: italic;
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    width: 8.5em;
+    height: 2.9em;
+    margin: 0.5px;
+    margin-left: 90vh;
+    background: #160d08;
+    filter: drop-shadow(1px 1px 25px black);
+    box-shadow: inset 0px 8px 36px black;
+    align-items: center;
+    justify-content: center;
+    color: #f3ece7;
+    border: none;
+    border-radius: 0.625em;
+    font-size: 21px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.btn a{
+    text-decoration: none;
+    color: #f3ece7;
+}
+   
+.background button:hover {
+    color: #160d08;
+    transform: scale(1.1);
+}
+   
+.background button:after {
+    content: "";
+    background: #824720;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+}
+   
+.background button:hover:after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+/*about us*/
+#about{
+    box-shadow: inset 0px 28px 196px black;
+    padding: 25px;
+    background-color: #160d08;
+}
+
+#about p{
+    color: #f3ece7;
+}
+
+.title{
+    font-size: 95px;
+    font-weight: 999;
+    margin: 10px;
+    padding: 1rem 1rem;
+    color: #f3ece7;
+    filter: drop-shadow(1px 1px 55px black);
+    display: flex;
+    justify-content: center;
+}
+
+.title::before,
+.title::after{
+    content: '.';
+}
+
+.card-item {
+    width: 350px;
+    height: 455px;
+    border-radius: 10px 10px;
+    margin: 21px;
+    background: #f3ece7;
+    filter: grayscale(100%);
+    transition: 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.card-item:hover{
+    transform: scale(1.1);
+    filter: sepia(100%);
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#about .content{
+    justify-content: start;
+}
+
+/*product*/
+#product{
+    box-shadow: inset 0px 28px 196px black;
+    padding: 25px;
+    background-color: #160d08;
+}
+
+.card {
+    margin: 35px;
+    padding: 10px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 350px;
+    height: 611px;
+    transition: 0.5s;
+    filter: grayscale(100%);
+    border-radius: 10px 10px;
+    background: rgb(236, 236, 236);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.card:hover{
+    transform: scale(1.1);
+    filter: sepia(50%);
+}
+
+.card img{
+    width: 350px;
+    height: 455px;
+    border-radius: 10px 10px;
+}
+
+.size {
+  font-size: 0.75rem;
+  color: #0c0704;
+}
+
+.size span{
+    font-size: larger;
+    font-weight: 300;
+    font-style: initial;
+}
+
+.list-size {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.list-size .item-list {
+  list-style: none;
+}
+
+.list-size .item-list-button {
+  cursor: pointer;
+  padding: 0.45rem;
+  background-color: #824720;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #0c0704;
+  border: 2px solid #0c0704;
+  border-radius: 0.7rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.item-list-button:hover {
+  border: 2px solid #160d08;
+}
+.item-list-button:focus {
+  border: 2px solid black;
+  box-shadow: inset 0px 1px 4px black;
+}
+
+.card h1{
+    font-size: x-large;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    padding: 0.1rem 0.1rem;
+    color: #0c0704;
+}
+
+.card h3{
+    font-size: 32px;
+    font-weight: 999;
+    font-style: italic;
+    color: #824720;
+}
+
+.price-card{
+    display: flex;
+}
+
+.cart-button {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.1rem;
+    margin-left: 29px;
+    width: 100%;
+    background-color: #824720;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #f3ece7;
+    text-wrap: nowrap;
+    border: 2px solid ;
+    border-radius: 0.5rem;
+    box-shadow: inset 0px 1px 4px black;
+    border: solid 2px #0c0704;
+}
+  
+.cart-button .cart-icon {
+    width: 1rem;
+}
+  
+/*footer*/
+.footer{
+    background-color: #160d08;
+    color: #f3ece7;
+    padding: 1.1em 70px;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    border-top: solid 1px black;
+    box-shadow: inset 0px 8px 26px black;
+}
+
+.footer-title {
+    font-size: medium;
+    font-weight: 999;
+    color: #f3ece7;
+    transition: .6s;
+    text-decoration: none;
+    filter: drop-shadow(1px 0 7px #160d08);
+}
+
+.footer-title:hover{
+    color: #824720;
+}
+
+/*media*/
+@media (min-width:1051px) {
+    
+.mobile-nav{
+    display: none;
+    opacity: 0;
+}
+                
+.hamburger{
+    display: none;
+    opacity: 0;
+}
+
+.nav-items a{
+    margin-left: 0%;
+    opacity: 1;
+}
+
+}
+
+@media(max-width:1050px) {
+
+.nav-items a{
+    margin-left: -10000%;
+    font-size: medium;
+    opacity: 0;
+}
+
+.hamburger{
+    margin-right: 40px;
+}
+
+.logo{
+    font-size: 15px;
+}
+
+.container{
+    padding: 15px 25px;
+    font-size: medium;
+    justify-content: center;
+}
+
+.font-effect{
+    font-size: 55px;
+    padding-top: 45vh;
+    display: flex;
+    justify-content: start;
+}
+
+.btn {
+    width: 6rem;
+    height: 2.9em;
+    margin: 0.5px;
+    margin-left: 3vh;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.container svg {
+    height: 4px;
+    width: 4px;
+}
+
+.title{
+    font-size: 34px;
+}
+
+#about p{
+    font-size: smaller;
+}
+
+.card {
+    margin: 25px;
+    padding: 7px;
+    width: 300px;
+    height: 555px;
+}
+
+.card img{
+    width: 300px;
+    height: 400px;
+    border-radius: 10px 10px;
+}
+
+.card-item {
+    width: 250px;
+    height: 355px;
+}
+
+}
+
+@media (max-width:320px) {
+.hamburger{
+    width: 65px;
+    height: 15px;
+}
+
+.card {
+    margin: 10px;
+    padding: 7px;
+    width: 200px;
+    height: 465px;
+}
+        
+.card img{
+    width: 195px;
+    height: 250px;
+    border-radius: 10px 10px;
+}
+}
+
+@media (max-width:305px) {
+    
+.hamburger{
+    width: 65px;
+    height: 15px;
+}
+
+.logo{
+    font-size: 13px;
+}
+
+.container{
+    padding: 15px 15px;
+}
+
+.font-effect{
+    font-size: 55px;
+    padding-top: 35vh;
+}
+    
+.card {
+    margin: 10px;
+    padding: 7px;
+    width: 200px;
+    height: 450px;
+}
+    
+.card img{
+    width: 195px;
+    height: 250px;
+    border-radius: 10px 10px;
+}
+    
+.card-item {
+    width: 225px;
+    height: 395px;
+}
+
+.card-item {
+    width: 225px;
+    height: 395px;
+    margin: 12px;
+}
+    
+}
+
